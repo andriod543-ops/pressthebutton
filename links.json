@@ -1,153 +1,606 @@
 [
-  "https://www.coolmathgames.com/",
-  "https://www.crazygames.com/",
-  "https://www.newgrounds.com/",
-  "https://www.armorgames.com/",
-  "https://www.addictinggames.com/",
-  "https://www.y8.com/",
-  "https://www.kongregate.com/",
-  "https://www.foddy.net/2010/10/qwop/",
-  "https://play2048.co/",
-  "https://orteil.dashnet.org/cookieclicker/",
-  "http://slither.io/",
-  "https://littlealchemy2.com/",
-  "https://koalabeast.com/",
-  "https://dan-ball.jp/en/javagame/dust/",
-  "https://pacman-games.com/",
-  "https://zenarcades.com/",
-  "https://plays.org/arcade-games/",
-  "https://www.pacogames.com/arcade",
-  "https://findtheinvisiblecow.com/",
-  "https://www.silvergames.com/",
-  "https://www.agame.com/",
-  "https://www.sporcle.com/",
-  "https://www.funtrivia.com/",
-  "https://www.jetpunk.com/",
-  "https://www.sporcle.com/games/subcategory/logic",
-  "https://www.triviaplaza.com/",
-  "https://www.purposegames.com/",
-  "https://world-geography-games.com/",
-  "https://www.proprofs.com/quiz-school/",
-  "https://www.16personalities.com/",
-  "https://www.123test.com/logical-reasoning-test/",
-  "https://www.puzzleship.com/",
-  "https://www.personality-quizzes.com/",
-  "https://www.zebrapuzzles.com/",
-  "https://dailygriddle.com/",
-  "https://www.ahapuzzles.com/logic/zebra/",
-  "https://www.brainzilla.com/logic/zebra/",
-  "https://cognitivetrain.com/zebra-puzzle/",
-  "https://www.analong.com/category/games/riddle/",
-  "https://humanbenchmark.com/",
-  "https://www.wtfshouldidowithmylife.com/",
-  "https://www.puzzlebaron.com/",
-  "http://moralmachine.mit.edu/",
-  "https://www.philosophyexperiments.com/moralityplay",
-  "https://neal.fun/absurd-trolley-problems/",
-  "https://absurd-trolley-problems.pages.dev/",
-  "https://playgama.com/game/trolley-problem",
-  "https://playgama.com/game/throlley-problem",
-  "https://albertdidriksen.com/trolley-game/",
-  "https://buildtounderstand.itch.io/the-choice",
-  "https://www.decisionproblem.com/paperclips/",
-  "https://muhashi.com/aita-guesser/",
-  "https://instantverdict.com/",
-  "https://playlin.io/game/aita-guesser/",
-  "https://seekdle.com/game/aita-guesser/",
-  "https://www.alldle.net/game/aita-guesser",
-  "https://alwaysjudgeabookbyitscover.com/",
-  "https://www.justsettleit.app/",
-  "https://improvapp.com/games/hot-takes/",
-  "https://psycatgames.com/app/hot-takes/",
-  "https://sparking.chat/games/hot-takes",
-  "https://hotranking.app/",
-  "https://trylovely.app/games/hot-takes",
-  "https://wouldyourather.app/",
-  "https://wouldyouratherquest.com/",
-  "https://wouldurather.io/",
-  "https://wouldyou.app/",
-  "https://trywyr.com/",
-  "https://psycatgames.com/app/would-you-rather/",
-  "https://talkflowapp.com/would-you-rather",
-  "https://www.gameflare.com/online-game/would-you-rather/",
-  "https://patatap.com/",
-  "https://thisissand.com/",
-  "https://sandspiel.club/",
-  "https://fallingfalling.com/",
-  "https://www.autodraw.com/",
-  "https://www.koalastothemax.com/",
-  "https://zoomquilt.org/",
-  "https://zoomquilt2.com/",
-  "https://bouncyballs.org/",
-  "https://www.omfgdogs.com/",
-  "https://drawastickman.com/",
-  "https://quickdraw.withgoogle.com/",
-  "https://neal.fun/perfect-circle/",
-  "https://pointerpointer.com/",
-  "https://www.reactiontester.com/",
-  "https://reflexlab.co/",
-  "https://checkreactiontime.com/",
-  "https://reactiontime.net/",
-  "https://www.reaction-time-test.io/",
-  "https://testreaction.com/",
-  "https://reaction-time-test.online/",
-  "https://www.iobit.com/en/reaction-time-test.php",
-  "https://www.clickspersecond.com/",
-  "https://cps-tester.us/",
-  "https://clickspeedtest.io/",
-  "https://www.rapidtables.com/tools/click-test.html",
-  "https://reflexforge.com/",
-  "https://www.deadmalls.com/",
-  "https://opacity.us/",
-  "https://www.abandonedamerica.us/",
-  "https://the-liminality-gallery.neocities.org/",
-  "http://oldweb.today/",
-  "https://libraryofbabel.info/",
-  "https://www.atlasobscura.com/",
-  "https://www.spomenikdatabase.org/",
-  "https://abandonedphotos.com/",
-  "https://www.obsidianurbexphotography.com/",
-  "https://www.worldguessr.com/",
-  "https://openguessr.com/",
-  "https://freeguessr.com/",
-  "https://guesswhereyouare.com/",
-  "https://www.geotastic.net/",
-  "https://www.mapcrunch.com/",
-  "https://www.thetruesize.com/",
-  "https://zoom.earth/",
-  "https://www.windy.com/",
-  "https://lizardpoint.com/",
-  "https://www.thewikigame.com/",
-  "https://www.geoguessr.com/",
-  "https://theuselessweb.com/",
-  "https://heeeeeeeey.com/",
-  "https://cat-bounce.com/",
-  "https://eelslap.com/",
-  "https://burymewithmymoney.com/",
-  "https://papertoilet.com/",
-  "https://longdogechallenge.com/",
-  "https://isitchristmas.com/",
-  "https://isitfridayyet.net/",
-  "https://screamintothevoid.com/",
-  "https://wikiroulette.co/",
-  "https://onemillioncheckboxes.com/",
-  "https://window-swap.com/",
-  "https://neal.fun/infinite-craft/",
-  "https://neal.fun/password-game/",
-  "https://neal.fun/internet-roadtrip/",
-  "https://neal.fun/stimulation-clicker/",
-  "https://neal.fun/asteroid-launcher/",
-  "https://neal.fun/life-stats/",
-  "https://neal.fun/size-of-space/",
-  "https://neal.fun/where-does-the-day-go/",
-  "https://www.dontevenreply.com/",
-  "https://rainymood.com/",
-  "https://asoftmurmur.com/",
-  "https://radio.garden/",
-  "https://www.incredibox.com/",
-  "https://hackertyper.com/",
-  "https://nyan.cat/",
-  "https://procatinator.com/",
-  "https://www.music-map.com/",
-  "https://www.gnoosic.com/"
+  {
+    "url": "https://www.coolmathgames.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://www.crazygames.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://www.newgrounds.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://www.armorgames.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://www.addictinggames.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://www.y8.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://www.kongregate.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://www.foddy.net/2010/10/qwop/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://play2048.co/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://orteil.dashnet.org/cookieclicker/",
+    "mood": "arcade"
+  },
+  {
+    "url": "http://slither.io/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://littlealchemy2.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://koalabeast.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://dan-ball.jp/en/javagame/dust/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://pacman-games.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://zenarcades.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://plays.org/arcade-games/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://www.pacogames.com/arcade",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://findtheinvisiblecow.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://www.silvergames.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://www.agame.com/",
+    "mood": "arcade"
+  },
+  {
+    "url": "https://www.sporcle.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.funtrivia.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.jetpunk.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.sporcle.com/games/subcategory/logic",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.triviaplaza.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.purposegames.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://world-geography-games.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.proprofs.com/quiz-school/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.16personalities.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.123test.com/logical-reasoning-test/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.puzzleship.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.personality-quizzes.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.zebrapuzzles.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://dailygriddle.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.ahapuzzles.com/logic/zebra/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.brainzilla.com/logic/zebra/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://cognitivetrain.com/zebra-puzzle/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.analong.com/category/games/riddle/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://humanbenchmark.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.wtfshouldidowithmylife.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "https://www.puzzlebaron.com/",
+    "mood": "quiz"
+  },
+  {
+    "url": "http://moralmachine.mit.edu/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://www.philosophyexperiments.com/moralityplay",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://neal.fun/absurd-trolley-problems/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://absurd-trolley-problems.pages.dev/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://playgama.com/game/trolley-problem",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://playgama.com/game/throlley-problem",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://albertdidriksen.com/trolley-game/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://buildtounderstand.itch.io/the-choice",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://www.decisionproblem.com/paperclips/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://muhashi.com/aita-guesser/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://instantverdict.com/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://playlin.io/game/aita-guesser/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://seekdle.com/game/aita-guesser/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://www.alldle.net/game/aita-guesser",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://alwaysjudgeabookbyitscover.com/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://www.justsettleit.app/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://improvapp.com/games/hot-takes/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://psycatgames.com/app/hot-takes/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://sparking.chat/games/hot-takes",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://hotranking.app/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://trylovely.app/games/hot-takes",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://wouldyourather.app/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://wouldyouratherquest.com/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://wouldurather.io/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://wouldyou.app/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://trywyr.com/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://psycatgames.com/app/would-you-rather/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://talkflowapp.com/would-you-rather",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://www.gameflare.com/online-game/would-you-rather/",
+    "mood": "dilemma"
+  },
+  {
+    "url": "https://patatap.com/",
+    "mood": "art"
+  },
+  {
+    "url": "https://thisissand.com/",
+    "mood": "art"
+  },
+  {
+    "url": "https://sandspiel.club/",
+    "mood": "art"
+  },
+  {
+    "url": "https://fallingfalling.com/",
+    "mood": "art"
+  },
+  {
+    "url": "https://www.autodraw.com/",
+    "mood": "art"
+  },
+  {
+    "url": "https://www.koalastothemax.com/",
+    "mood": "art"
+  },
+  {
+    "url": "https://zoomquilt.org/",
+    "mood": "art"
+  },
+  {
+    "url": "https://zoomquilt2.com/",
+    "mood": "art"
+  },
+  {
+    "url": "https://bouncyballs.org/",
+    "mood": "art"
+  },
+  {
+    "url": "https://www.omfgdogs.com/",
+    "mood": "art"
+  },
+  {
+    "url": "https://drawastickman.com/",
+    "mood": "art"
+  },
+  {
+    "url": "https://quickdraw.withgoogle.com/",
+    "mood": "art"
+  },
+  {
+    "url": "https://neal.fun/perfect-circle/",
+    "mood": "art"
+  },
+  {
+    "url": "https://pointerpointer.com/",
+    "mood": "art"
+  },
+  {
+    "url": "https://www.reactiontester.com/",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://reflexlab.co/",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://checkreactiontime.com/",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://reactiontime.net/",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://www.reaction-time-test.io/",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://testreaction.com/",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://reaction-time-test.online/",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://www.iobit.com/en/reaction-time-test.php",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://www.clickspersecond.com/",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://cps-tester.us/",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://clickspeedtest.io/",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://www.rapidtables.com/tools/click-test.html",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://reflexforge.com/",
+    "mood": "reflex"
+  },
+  {
+    "url": "https://www.deadmalls.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://opacity.us/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.abandonedamerica.us/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://the-liminality-gallery.neocities.org/",
+    "mood": "weird"
+  },
+  {
+    "url": "http://oldweb.today/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://libraryofbabel.info/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.atlasobscura.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.spomenikdatabase.org/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://abandonedphotos.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.obsidianurbexphotography.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.worldguessr.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://openguessr.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://freeguessr.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://guesswhereyouare.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.geotastic.net/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.mapcrunch.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.thetruesize.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://zoom.earth/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.windy.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://lizardpoint.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.thewikigame.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.geoguessr.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://theuselessweb.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://heeeeeeeey.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://cat-bounce.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://eelslap.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://burymewithmymoney.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://papertoilet.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://longdogechallenge.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://isitchristmas.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://isitfridayyet.net/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://screamintothevoid.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://wikiroulette.co/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://onemillioncheckboxes.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://window-swap.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://neal.fun/infinite-craft/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://neal.fun/password-game/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://neal.fun/internet-roadtrip/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://neal.fun/stimulation-clicker/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://neal.fun/asteroid-launcher/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://neal.fun/life-stats/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://neal.fun/size-of-space/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://neal.fun/where-does-the-day-go/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.dontevenreply.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://rainymood.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://asoftmurmur.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://radio.garden/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.incredibox.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://hackertyper.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://nyan.cat/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://procatinator.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.music-map.com/",
+    "mood": "weird"
+  },
+  {
+    "url": "https://www.gnoosic.com/",
+    "mood": "weird"
+  }
 ]

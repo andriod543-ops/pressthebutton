@@ -82,6 +82,7 @@
     .stage {
       flex: 1;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 6vmin;
@@ -97,6 +98,41 @@
         drop-shadow(0 24px 55px rgba(255,107,107,0.30))
         drop-shadow(0 8px 22px rgba(0,0,0,0.09));
     }
+
+    /* ══ Mood chips ══════════════════════════════════ */
+    .mood-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2.2rem;
+      max-width: 460px;
+    }
+    .mood-chip {
+      font-family: 'Fredoka', Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: #fff;
+      border: 2px solid #F0E8DC;
+      border-radius: 999px;
+      padding: 0.45rem 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.12s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .mood-chip:hover { border-color: var(--coral); color: var(--ink); }
+    .mood-chip:active { transform: scale(0.95); }
+    .mood-chip.active {
+      background: var(--coral);
+      border-color: var(--coral);
+      color: #fff;
+      box-shadow: 0 3px 0 #c0392b, 0 6px 14px rgba(255,107,107,0.3);
+    }
+    .mood-chip:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
     .press-btn--big {
       width: 100%;
       height: 100%;
@@ -277,6 +313,14 @@
   <!-- ══ HOME ══ -->
   <div class="home-view">
     <div class="stage">
+      <div class="mood-row" role="group" aria-label="Filter by mood">
+        <button class="mood-chip" type="button" data-mood="arcade" aria-pressed="false">🎮 Arcade</button>
+        <button class="mood-chip" type="button" data-mood="quiz" aria-pressed="false">🧠 Quiz</button>
+        <button class="mood-chip" type="button" data-mood="dilemma" aria-pressed="false">⚖️ Dilemma</button>
+        <button class="mood-chip" type="button" data-mood="art" aria-pressed="false">🎨 Art</button>
+        <button class="mood-chip" type="button" data-mood="reflex" aria-pressed="false">⚡ Reflex</button>
+        <button class="mood-chip" type="button" data-mood="weird" aria-pressed="false">👻 Weird</button>
+      </div>
       <div class="button-wrap">
         <button class="press-btn press-btn--big" id="press-btn" type="button" aria-label="Press the button" disabled>PRESS</button>
       </div>
@@ -364,17 +408,24 @@
         'https://www.bored.com/arcade/nerve-check/'
       ];
 
+      var allLinks = [];   // [{url, mood}]
       var pool = [];
       var bag = [];
       var last = null;
       var current = null;
+      var activeMood = null;
+      var moodChips = Array.prototype.slice.call(document.querySelectorAll('.mood-chip'));
 
       function normalise(data) {
         if (!Array.isArray(data)) return [];
         return data
-          .map(function (i) { return typeof i === 'string' ? i : (i && i.url); })
-          .filter(function (u) { return typeof u === 'string' && /^https?:\/\//i.test(u.trim()); })
-          .map(function (u) { return u.trim(); });
+          .map(function (i) {
+            if (typeof i === 'string') return { url: i, mood: null };
+            if (i && typeof i.url === 'string') return { url: i.url, mood: i.mood || null };
+            return null;
+          })
+          .filter(function (i) { return i && /^https?:\/\//i.test(i.url.trim()); })
+          .map(function (i) { return { url: i.url.trim(), mood: i.mood }; });
       }
       function shuffle(a) {
         a = a.slice();
@@ -480,9 +531,31 @@
         if (!history.state || history.state.view !== 'frame') goHome();
       });
 
-      function activate(list) {
-        pool = list.length ? list : FALLBACK.slice();
+      function rebuildPool() {
+        var filtered = activeMood
+          ? allLinks.filter(function (i) { return i.mood === activeMood; })
+          : allLinks;
+        pool = filtered.map(function (i) { return i.url; });
+        bag = [];
         refill();
+      }
+
+      moodChips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var mood = chip.getAttribute('data-mood');
+          activeMood = (activeMood === mood) ? null : mood;
+          moodChips.forEach(function (c) {
+            var isActive = c.getAttribute('data-mood') === activeMood;
+            c.classList.toggle('active', isActive);
+            c.setAttribute('aria-pressed', String(isActive));
+          });
+          rebuildPool();
+        });
+      });
+
+      function activate(list) {
+        allLinks = list.length ? list : FALLBACK.map(function (u) { return { url: u, mood: null }; });
+        rebuildPool();
         bigBtn.disabled = false;
       }
       fetch('links.json', { cache: 'no-store' })
@@ -490,7 +563,7 @@
         .then(function (d) { activate(normalise(d)); })
         .catch(function (err) {
           console.warn('Press the Button: could not load links.json — using fallback list.', err);
-          activate(FALLBACK.slice());
+          activate([]);
         });
     })();
   </script>
