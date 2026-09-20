@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with the Press the Button team — bug reports, broken links, or feedback." />
+  <title>Contact Us — Press the Button</title>
+  <link rel="canonical" href="https://pressboredbutton.com/contact.html" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔴</text></svg>" />
+  <meta name="theme-color" content="#1C1518" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Press the Button" />
+  <meta property="og:title" content="Contact Us — Press the Button" />
+  <meta property="og:description" content="Get in touch with the Press the Button team. Email us at contact@pressboredbutton.com." />
+  <meta property="og:url" content="https://pressboredbutton.com/contact.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Contact Us — Press the Button" />
+  <meta name="twitter:description" content="Get in touch with the Press the Button team at contact@pressboredbutton.com." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact — Press the Button",
+    "url": "https://pressboredbutton.com/contact.html",
+    "isPartOf": { "@id": "https://pressboredbutton.com/#website" },
+    "mainEntity": { "@id": "https://pressboredbutton.com/#organization" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://pressboredbutton.com/#organization",
+    "name": "Press the Button",
+    "url": "https://pressboredbutton.com/",
+    "email": "contact@pressboredbutton.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "contact@pressboredbutton.com",
+      "contactType": "customer support"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pressboredbutton.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://pressboredbutton.com/contact.html" }
+    ]
+  }
+  </script>
+
+  <link rel="preload" as="font" type="font/woff2" href="fonts/fredoka-var-latin.woff2" crossorigin />
+
+  <style>
+    @font-face {
+      font-family: 'Fredoka';
+      font-style: normal;
+      font-weight: 300 700;
+      font-display: swap;
+      src: url('fonts/fredoka-var-latin.woff2') format('woff2');
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --coral:  #FF6B6B;
+      --bg:     #1C1518;
+      --ink:    #F8F1EC;
+      --muted:  #9C8B90;
+      --card:   #271F22;
+      --border: #3B2E33;
+      --sep:    #57474D;
+    }
+
+    html { background: var(--bg); }
+
+    body {
+      font-family: 'Fredoka', Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 10% 20%, rgba(78,205,196,0.14)  0%, transparent 55%),
+        radial-gradient(ellipse at 90% 80%, rgba(255,107,107,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 50%, rgba(255,217,61,0.08)  0%, transparent 65%),
+        var(--bg);
+      min-height: 100vh;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* ── Back link ─────────────────────────────────── */
+    .back-link {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      background: var(--card);
+      border: 2px solid var(--border);
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .back-link:hover { border-color: var(--coral); color: var(--ink); }
+    .back-link:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+
+    /* ── Page heading ──────────────────────────────── */
+    .page-head {
+      text-align: center;
+      margin-bottom: 2.25rem;
+    }
+    .page-head .icon {
+      font-size: 2.75rem;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .page-head h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .page-head p {
+      font-family: Arial, sans-serif;
+      font-size: 0.97rem;
+      font-weight: 500;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── Layout grid ───────────────────────────────── */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    @media (max-width: 620px) {
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+
+    /* ── Form card ─────────────────────────────────── */
+    .form-card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 2rem 2rem 1.75rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2), 0 12px 36px rgba(0,0,0,0.3);
+    }
+    .form-card h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+
+    .field { margin-bottom: 1rem; }
+    .field label {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 0.7rem 0.95rem;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .field input::placeholder,
+    .field textarea::placeholder { color: var(--muted); opacity: 0.7; }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--coral);
+      box-shadow: 0 0 0 3px rgba(255,107,107,0.18);
+    }
+    .field textarea {
+      resize: vertical;
+      min-height: 130px;
+      line-height: 1.6;
+    }
+    .field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239C8B90' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.9rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+    .field select option { background: var(--card); color: var(--ink); }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    @media (max-width: 480px) { .field-row { grid-template-columns: 1fr; } }
+
+    .btn-send {
+      width: 100%;
+      font-family: 'Fredoka', Arial, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--coral);
+      border: none;
+      border-radius: 14px;
+      padding: 0.85rem 1.5rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 4px 14px rgba(255,107,107,0.35);
+    }
+    .btn-send:hover  { background: #ff5252; box-shadow: 0 6px 20px rgba(255,107,107,0.45); }
+    .btn-send:active { transform: translateY(1px); box-shadow: 0 2px 8px rgba(255,107,107,0.3); }
+    .btn-send:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+
+    /* Success state */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    .success-msg .success-icon { font-size: 2.5rem; display: block; margin-bottom: 0.75rem; }
+    .success-msg h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+    .success-msg p { font-family: Arial, sans-serif; font-size: 0.9rem; font-weight: 500; color: var(--muted); line-height: 1.65; }
+    .success-msg strong { color: var(--ink); }
+
+    /* ── Info sidebar ──────────────────────────────── */
+    .info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .info-card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 1.25rem 1.4rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15), 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .info-card-head {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .info-card-icon-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .info-icon-bubble {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .info-icon-bubble.email  { background: rgba(255,107,107,0.16); }
+    .info-icon-bubble.web    { background: rgba(78,205,196,0.16); }
+    .info-card-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      word-break: break-all;
+      line-height: 1.3;
+      transition: color 0.14s;
+    }
+    a.info-card-val:hover { color: var(--coral); }
+
+    .topics-card {
+      background: linear-gradient(135deg, rgba(78,205,196,0.10), rgba(255,107,107,0.10));
+      border: 2px dashed var(--border);
+      border-radius: 18px;
+      padding: 1.25rem 1.4rem;
+    }
+    .topics-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+    .topic-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .topic-list li {
+      font-family: Arial, sans-serif;
+      font-size: 0.83rem;
+      font-weight: 500;
+      line-height: 1.55;
+      color: var(--muted);
+      display: flex;
+      gap: 0.5rem;
+    }
+    .topic-list li span:first-child { flex-shrink: 0; }
+
+    .reply-pill {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 0.85rem 1.1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15), 0 6px 18px rgba(0,0,0,0.2);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.55;
+    }
+    .reply-pill strong { color: var(--ink); font-weight: 800; }
+
+    /* ── Sitemap ───────────────────────────────────── */
+    .sitemap { display:flex; flex-wrap:wrap; gap:2rem 3rem; margin-top:3rem; padding:2rem 0; border-top:2px dashed var(--border); }
+    .sitemap-head { font-size:0.9rem; font-weight:600; color:var(--ink); margin-bottom:0.6rem; text-transform:uppercase; letter-spacing:0.06em; }
+    .sitemap-col { display:flex; flex-direction:column; gap:0.3rem; min-width:140px; }
+    .sitemap-link { font-family: Arial, sans-serif; font-size:0.85rem; font-weight:600; color:var(--muted); text-decoration:none; transition:color 0.14s; }
+    .sitemap-link:hover { color:var(--coral); }
+
+    /* ── Footer ────────────────────────────────────── */
+    .site-footer { margin-top:2rem; padding-top:1.5rem; border-top:2px dashed var(--border); display:flex; flex-direction:column; align-items:center; gap:0.5rem; }
+    .footer-nav { display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; justify-content:center; max-width: 480px; }
+    .footer-link { font-size:0.95rem; font-weight:600; color:var(--muted); text-decoration:none; padding:0.3rem 0.75rem; border-radius:20px; transition:background 0.15s ease,color 0.15s ease; min-height:44px; display:flex; align-items:center; }
+    .footer-link:hover { background:var(--border); color:var(--ink); }
+    .footer-link:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+    .footer-link--youtube svg,
+    .footer-link--instagram svg { transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1); }
+    .footer-link--youtube:hover svg,
+    .footer-link--instagram:hover svg { transform: scale(1.12); }
+    .footer-link.active { color:var(--coral); }
+    .footer-sep { color:var(--sep); font-size:1.05rem; }
+    .footer-copy { font-family: Arial, sans-serif; font-size:0.85rem; font-weight:600; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <a href="index.html" class="back-link">← Back to the Button</a>
+
+    <div class="page-head">
+      <span class="icon">✉️</span>
+      <h1>Contact Us</h1>
+      <p>Found a broken link, a site that shouldn't be in the mix, or just want to say hi —<br>we'd love to hear from you.</p>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- Form -->
+      <div class="form-card">
+        <h2>Send us a message</h2>
+        <form id="contact-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="cf-name">Your name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Jane Smith" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="cf-email">Your email</label>
+              <input type="email" id="cf-email" name="email" placeholder="you@example.com" autocomplete="email" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-subject">Subject</label>
+            <select id="cf-subject" name="subject">
+              <option value="">— choose a topic —</option>
+              <option value="Broken link">🔗 Broken or dead link</option>
+              <option value="Suggest a site">💡 Suggest a site to add</option>
+              <option value="Bug report">🐛 Bug report</option>
+              <option value="Business enquiry">🤝 Business enquiry</option>
+              <option value="Privacy or legal">⚖️ Privacy or legal</option>
+              <option value="Other">💬 Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" placeholder="Tell us what's on your mind…"></textarea>
+          </div>
+          <button type="submit" class="btn-send">Send Message →</button>
+        </form>
+
+        <div class="success-msg" id="success-msg">
+          <span class="success-icon">🎉</span>
+          <h3>Message sent!</h3>
+          <p>Your email client should have opened with the message ready to send. If it didn't, email us directly at <strong>contact@pressboredbutton.com</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Info sidebar -->
+      <div class="info-col">
+
+        <div class="info-card">
+          <p class="info-card-head">Email</p>
+          <div class="info-card-icon-row">
+            <div class="info-icon-bubble email">📧</div>
+            <a href="mailto:contact@pressboredbutton.com" class="info-card-val">contact@pressboredbutton.com</a>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <p class="info-card-head">Website</p>
+          <div class="info-card-icon-row">
+            <div class="info-icon-bubble web">🌐</div>
+            <a href="index.html" class="info-card-val">Press the Button</a>
+          </div>
+        </div>
+
+        <div class="topics-card">
+          <h3>We can help with</h3>
+          <ul class="topic-list">
+            <li><span>🔗</span><span>Broken or dead links in the rotation</span></li>
+            <li><span>💡</span><span>Suggesting a new site to add</span></li>
+            <li><span>🐛</span><span>Bugs — browser, device, what happened</span></li>
+            <li><span>🤝</span><span>Partnerships &amp; sponsorships</span></li>
+            <li><span>⚖️</span><span>Privacy &amp; legal questions</span></li>
+          </ul>
+        </div>
+
+        <div class="reply-pill">
+          We aim to reply within<br><strong>1–2 business days</strong>
+        </div>
+
+      </div>
+    </div>
+
+    <nav class="sitemap" aria-label="Site map">
+      <div class="sitemap-col">
+        <p class="sitemap-head">🔴 Press the Button</p>
+        <a href="index.html" class="sitemap-link">The Button</a>
+        <a href="blog.html" class="sitemap-link">Blog</a>
+        <a href="faq.html" class="sitemap-link">FAQ</a>
+        <a href="contact.html" class="sitemap-link">Contact</a>
+      </div>
+      <div class="sitemap-col">
+        <p class="sitemap-head">Legal</p>
+        <a href="privacy.html" class="sitemap-link">Privacy Policy</a>
+        <a href="terms.html" class="sitemap-link">Terms &amp; Conditions</a>
+      </div>
+    </nav>
+
+    <footer class="site-footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="blog.html" class="footer-link">Blog</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="faq.html" class="footer-link">FAQ</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="terms.html" class="footer-link">Terms</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="contact.html" class="footer-link active">Contact</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="https://www.youtube.com/" class="footer-link footer-link--youtube" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:0.35rem;">
+            <path fill="#FF0000" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8Z"/>
+            <path fill="#FFF" d="M9.6 15.6V8.4l6.4 3.6-6.4 3.6Z"/>
+          </svg>
+          YouTube
+        </a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="https://www.instagram.com/" class="footer-link footer-link--instagram" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:0.35rem;">
+            <defs>
+              <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FED576"/>
+                <stop offset="26%" stop-color="#F47133"/>
+                <stop offset="61%" stop-color="#BC3081"/>
+                <stop offset="100%" stop-color="#4C63D2"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#igGrad)"/>
+            <circle cx="12" cy="12" r="5" fill="none" stroke="#FFF" stroke-width="2"/>
+            <circle cx="17.3" cy="6.7" r="1.3" fill="#FFF"/>
+          </svg>
+          Instagram
+        </a>
+      </nav>
+      <p class="footer-copy">© 2026 Press the Button</p>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name    = document.getElementById('cf-name').value.trim();
+      const email   = document.getElementById('cf-email').value.trim();
+      const subject = document.getElementById('cf-subject').value || 'Message from pressboredbutton.com';
+      const message = document.getElementById('cf-message').value.trim();
+
+      const body = [
+        name    ? 'Name: '    + name    : '',
+        email   ? 'Email: '   + email   : '',
+        '',
+        message || '(no message)'
+      ].filter(Boolean).join('\n');
+
+      const mailto = 'mailto:contact@pressboredbutton.com'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body='    + encodeURIComponent(body);
+
+      window.location.href = mailto;
+
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('success-msg').style.display  = 'block';
+    });
+  </script>
+</body>
+</html>
