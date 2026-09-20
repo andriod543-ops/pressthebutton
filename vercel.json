@@ -2,12 +2,6 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.pressboredbutton.com" }],
-      "destination": "https://pressboredbutton.com/:path*",
-      "permanent": true
-    },
     { "source": "/about", "destination": "/about.html", "permanent": true },
     { "source": "/contact", "destination": "/contact.html", "permanent": true }
   ],
