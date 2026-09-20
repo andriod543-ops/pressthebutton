@@ -398,8 +398,21 @@
       var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       // Hosts that send X-Frame-Options / frame-ancestors and cannot be embedded.
-      // Matched by hostname suffix. Add more here as you discover them.
-      var BLOCKED_HOSTS = ['neal.fun', 'akinator.com'];
+      // Matched by hostname suffix (so a bare entry also covers its www. form).
+      // Derived by checking response headers for all 151 links.json entries —
+      // re-run that check if links.json changes, rather than guessing new ones.
+      var BLOCKED_HOSTS = [
+        '123test.com', '16personalities.com', 'abandonedphotos.com', 'addictinggames.com',
+        'agame.com', 'armorgames.com', 'atlasobscura.com', 'buildtounderstand.itch.io',
+        'clickspeedtest.io', 'crazygames.com', 'dailygriddle.com', 'drawastickman.com',
+        'gameflare.com', 'improvapp.com', 'instantverdict.com', 'iobit.com', 'jetpunk.com',
+        'justsettleit.app', 'kongregate.com', 'neal.fun', 'newgrounds.com', 'openguessr.com',
+        'orteil.dashnet.org', 'pacman-games.com', 'personality-quizzes.com',
+        'philosophyexperiments.com', 'play2048.co', 'plays.org', 'procatinator.com',
+        'purposegames.com', 'puzzleship.com', 'quickdraw.withgoogle.com', 'rapidtables.com',
+        'reaction-time-test.io', 'reflexlab.co', 'silvergames.com', 'trylovely.app',
+        'trywyr.com', 'wouldurather.io', 'y8.com', 'zoom.earth'
+      ];
 
       var FALLBACK = [
         'https://vole.wtf/kick-the-ball-back/',
