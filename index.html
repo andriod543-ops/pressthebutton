@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Press the button." />
+  <title>Press the Button</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔴</text></svg>" />
+  <meta name="theme-color" content="#FF6B6B" />
+
+  <link rel="preload" as="font" type="font/woff2" href="fonts/fredoka-var-latin.woff2" crossorigin />
+
+  <style>
+    @font-face {
+      font-family: 'Fredoka';
+      font-style: normal;
+      font-weight: 300 700;
+      font-display: swap;
+      src: url('fonts/fredoka-var-latin.woff2') format('woff2');
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --coral: #FF6B6B;
+      --bg:    #FFF8EE;
+      --ink:   #2D2327;
+      --muted: #8A7F85;
+    }
+
+    html { height: 100%; }
+
+    body {
+      min-height: 100%;
+      font-family: 'Fredoka', Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 8% 15%,  rgba(255,107,107,0.14) 0%, transparent 50%),
+        radial-gradient(ellipse at 92% 85%, rgba(78,205,196,0.14)  0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(255,217,61,0.08)  0%, transparent 65%),
+        var(--bg);
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ══ Shared button look ══════════════════════════ */
+    .press-btn {
+      font-family: 'Fredoka', Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      color: #fff;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 34% 28%, #FF9A7B 0%, var(--coral) 42%, #E8574E 100%);
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      transition: transform 0.09s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.09s ease;
+    }
+    .press-btn::after {
+      content: '';
+      position: absolute;
+      left: 13%;
+      top: 9%;
+      width: 46%;
+      height: 32%;
+      border-radius: 50%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.55) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .press-btn:disabled { opacity: 0.5; cursor: progress; }
+    .press-btn:focus-visible { outline: 4px solid var(--coral); outline-offset: 8px; }
+
+    /* ══ HOME view ══════════════════════════════════ */
+    .home-view {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .stage {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6vmin;
+    }
+    .button-wrap {
+      position: relative;
+      width: clamp(240px, 60vmin, 420px);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter:
+        drop-shadow(0 24px 55px rgba(255,107,107,0.30))
+        drop-shadow(0 8px 22px rgba(0,0,0,0.09));
+    }
+    .press-btn--big {
+      width: 100%;
+      height: 100%;
+      font-size: clamp(1.7rem, 6vmin, 2.6rem);
+      box-shadow:
+        0 18px 0 #B5342B,
+        0 22px 10px rgba(0,0,0,0.18),
+        inset 0 6px 16px rgba(255,255,255,0.35),
+        inset 0 -12px 26px rgba(0,0,0,0.22);
+    }
+    .press-btn--big:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow:
+        0 20px 0 #B5342B, 0 26px 14px rgba(0,0,0,0.2),
+        inset 0 6px 16px rgba(255,255,255,0.4), inset 0 -12px 26px rgba(0,0,0,0.22);
+    }
+    .press-btn--big:active:not(:disabled),
+    .press-btn--big.down:not(:disabled) {
+      transform: translateY(15px) scale(0.985);
+      box-shadow:
+        0 3px 0 #B5342B, 0 5px 7px rgba(0,0,0,0.22),
+        inset 0 6px 18px rgba(0,0,0,0.28), inset 0 -4px 12px rgba(0,0,0,0.14);
+    }
+
+    /* ══ Footer (home only) ═════════════════════════ */
+    .site-footer {
+      padding: 1.5rem 1.25rem 1.75rem;
+      border-top: 2px dashed #F0E8DC;
+      display: flex;
+      justify-content: center;
+    }
+    .footer-nav {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 0.5rem; max-width: 720px;
+    }
+    .footer-link {
+      font-family: 'Fredoka', Arial, sans-serif;
+      font-size: 0.95rem; font-weight: 600;
+      color: var(--muted); text-decoration: none;
+      padding: 0.35rem 0.7rem; border-radius: 20px;
+      display: flex; align-items: center;
+      transition: background 0.15s ease, color 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .footer-link:hover { background: #F0E8DC; color: var(--ink); }
+    .footer-link:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+    .footer-link--youtube svg,
+    .footer-link--instagram svg { transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1); }
+    .footer-link--youtube:hover svg,
+    .footer-link--instagram:hover svg { transform: scale(1.12); }
+    .footer-sep { color: #D4C8C0; font-size: 1.05rem; }
+
+    /* ══ FRAME view ═════════════════════════════════ */
+    body.view-frame { height: 100vh; overflow: hidden; }
+    body.view-frame .home-view { display: none; }
+    .frame-view { display: none; }
+    body.view-frame .frame-view {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .frame-bar {
+      flex: none;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9rem;
+      padding: 0 0.9rem;
+      background: rgba(255, 248, 238, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 2px dashed #F0E8DC;
+      box-shadow: 0 4px 18px rgba(45, 35, 39, 0.06);
+      z-index: 2;
+    }
+
+    .press-btn--mini {
+      width: 54px;
+      height: 54px;
+      flex: none;
+      font-size: 0.58rem;
+      letter-spacing: 0.02em;
+      box-shadow:
+        0 4px 0 #B5342B,
+        0 6px 9px rgba(0,0,0,0.16),
+        inset 0 3px 7px rgba(255,255,255,0.4),
+        inset 0 -5px 10px rgba(0,0,0,0.22);
+    }
+    .press-btn--mini:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 0 #B5342B, 0 8px 13px rgba(0,0,0,0.18), inset 0 3px 7px rgba(255,255,255,0.45), inset 0 -5px 10px rgba(0,0,0,0.22);
+    }
+    .press-btn--mini:active:not(:disabled),
+    .press-btn--mini.down:not(:disabled) {
+      transform: translateY(4px) scale(0.97);
+      box-shadow: 0 1px 0 #B5342B, 0 2px 5px rgba(0,0,0,0.2), inset 0 3px 9px rgba(0,0,0,0.28);
+    }
+
+    .bar-icon {
+      width: 40px; height: 40px;
+      flex: none;
+      display: flex; align-items: center; justify-content: center;
+      border: none;
+      border-radius: 12px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1.15rem;
+      line-height: 1;
+      transition: background 0.14s ease, color 0.14s ease, transform 0.1s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .bar-icon:hover { background: #F0E8DC; color: var(--ink); }
+    .bar-icon:active { transform: scale(0.92); }
+    .bar-icon:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+
+    .frame-stage {
+      flex: 1;
+      position: relative;
+      background: var(--bg);
+    }
+    #site-frame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #fff;
+    }
+
+    .frame-fallback {
+      position: absolute;
+      inset: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+      padding: 2rem;
+    }
+    body.frame-blocked .frame-fallback { display: flex; }
+    body.frame-blocked #site-frame { visibility: hidden; }
+
+    .fallback-note {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+      max-width: 22rem;
+      line-height: 1.6;
+    }
+    .fallback-open {
+      font-family: 'Fredoka', Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, var(--coral) 0%, #FF9F43 100%);
+      border: none;
+      border-radius: 999px;
+      padding: 0.8rem 2rem;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #c0392b, 0 10px 22px rgba(255,107,107,0.34);
+      transition: transform 0.12s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.12s ease;
+    }
+    .fallback-open:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #c0392b, 0 14px 28px rgba(255,107,107,0.42); }
+    .fallback-open:active { transform: translateY(3px); box-shadow: 0 1px 0 #c0392b; }
+    .fallback-open:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HOME ══ -->
+  <div class="home-view">
+    <div class="stage">
+      <div class="button-wrap">
+        <button class="press-btn press-btn--big" id="press-btn" type="button" aria-label="Press the button" disabled>PRESS</button>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="blog.html" class="footer-link">Blog</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="faq.html" class="footer-link">FAQ</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="terms.html" class="footer-link">Terms</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="https://www.youtube.com/" class="footer-link footer-link--youtube" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:0.35rem;">
+            <path fill="#FF0000" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8Z"/>
+            <path fill="#FFF" d="M9.6 15.6V8.4l6.4 3.6-6.4 3.6Z"/>
+          </svg>
+          YouTube
+        </a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="https://www.instagram.com/" class="footer-link footer-link--instagram" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:0.35rem;">
+            <defs>
+              <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FED576"/>
+                <stop offset="26%" stop-color="#F47133"/>
+                <stop offset="61%" stop-color="#BC3081"/>
+                <stop offset="100%" stop-color="#4C63D2"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#igGrad)"/>
+            <circle cx="12" cy="12" r="5" fill="none" stroke="#FFF" stroke-width="2"/>
+            <circle cx="17.3" cy="6.7" r="1.3" fill="#FFF"/>
+          </svg>
+          Instagram
+        </a>
+      </nav>
+    </footer>
+  </div>
+
+  <!-- ══ FRAME ══ -->
+  <div class="frame-view">
+    <div class="frame-bar">
+      <button class="bar-icon" id="bar-home" type="button" aria-label="Back to the button">&#8962;</button>
+      <button class="press-btn press-btn--mini" id="bar-press" type="button" aria-label="Press for another">PRESS</button>
+      <button class="bar-icon" id="bar-open" type="button" aria-label="Open this site in a new tab">&#8599;</button>
+    </div>
+    <div class="frame-stage">
+      <iframe id="site-frame" title="Random site"
+        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-modals allow-pointer-lock"
+        allow="fullscreen; autoplay; gamepad; accelerometer; gyroscope"
+        referrerpolicy="no-referrer"></iframe>
+      <div class="frame-fallback">
+        <p class="fallback-note">This one won&rsquo;t open inside the button &mdash; the site blocks embedding.</p>
+        <button class="fallback-open" id="fallback-open" type="button">Open it in a new tab &#8599;</button>
+        <p class="fallback-note" style="font-size:0.85rem">&hellip; or press the button for a different one.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var body      = document.body;
+      var bigBtn    = document.getElementById('press-btn');
+      var miniBtn   = document.getElementById('bar-press');
+      var homeBtn   = document.getElementById('bar-home');
+      var openBtn   = document.getElementById('bar-open');
+      var fbOpen    = document.getElementById('fallback-open');
+      var frame     = document.getElementById('site-frame');
+      var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Hosts that send X-Frame-Options / frame-ancestors and cannot be embedded.
+      // Matched by hostname suffix. Add more here as you discover them.
+      var BLOCKED_HOSTS = ['neal.fun', 'akinator.com'];
+
+      var FALLBACK = [
+        'https://vole.wtf/kick-the-ball-back/',
+        'https://theuselessswitch.click/',
+        'https://www.bored.com/arcade/reaction/',
+        'https://www.bored.com/arcade/nerve-check/'
+      ];
+
+      var pool = [];
+      var bag = [];
+      var last = null;
+      var current = null;
+
+      function normalise(data) {
+        if (!Array.isArray(data)) return [];
+        return data
+          .map(function (i) { return typeof i === 'string' ? i : (i && i.url); })
+          .filter(function (u) { return typeof u === 'string' && /^https?:\/\//i.test(u.trim()); })
+          .map(function (u) { return u.trim(); });
+      }
+      function shuffle(a) {
+        a = a.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var t = a[i]; a[i] = a[j]; a[j] = t;
+        }
+        return a;
+      }
+      function refill() {
+        bag = shuffle(pool);
+        if (bag.length > 1 && bag[0] === last) bag.push(bag.shift());
+      }
+      function nextUrl() {
+        if (!pool.length) return null;
+        if (!bag.length) refill();
+        last = bag.shift();
+        return last;
+      }
+      function isBlocked(url) {
+        try {
+          var h = new URL(url).hostname.toLowerCase();
+          return BLOCKED_HOSTS.some(function (b) { return h === b || h.endsWith('.' + b); });
+        } catch (e) { return false; }
+      }
+
+      function loadIntoFrame(url) {
+        current = url;
+        if (isBlocked(url)) {
+          // Known X-Frame-Options / frame-ancestors host — skip the frame,
+          // show the "open in a new tab" panel straight away.
+          body.classList.add('frame-blocked');
+          frame.removeAttribute('src');
+        } else {
+          body.classList.remove('frame-blocked');
+          frame.src = url;
+        }
+      }
+
+      function enterFrame(url) {
+        if (!url) return;
+        body.classList.add('view-frame');
+        if (!history.state || history.state.view !== 'frame') {
+          history.pushState({ view: 'frame' }, '');
+        }
+        loadIntoFrame(url);
+      }
+      function goHome() {
+        body.classList.remove('view-frame', 'frame-blocked');
+        frame.removeAttribute('src');
+      }
+
+      function tap(btn) {
+        if (reduceMotion) return;
+        btn.classList.add('down');
+        setTimeout(function () { btn.classList.remove('down'); }, 110);
+      }
+
+      // Big button -> first random site
+      bigBtn.addEventListener('pointerdown', function (e) {
+        e.preventDefault();
+        if (bigBtn.disabled) return;
+        tap(bigBtn);
+        enterFrame(nextUrl());
+      });
+      bigBtn.addEventListener('keydown', function (e) {
+        if (e.repeat) return;
+        if (e.key === ' ' || e.key === 'Enter' || e.key === 'Spacebar') {
+          e.preventDefault();
+          if (bigBtn.disabled) return;
+          tap(bigBtn);
+          enterFrame(nextUrl());
+        }
+      });
+      bigBtn.addEventListener('click', function (e) { e.preventDefault(); });
+
+      // Mini button -> next random site
+      miniBtn.addEventListener('pointerdown', function (e) {
+        e.preventDefault();
+        tap(miniBtn);
+        loadIntoFrame(nextUrl());
+      });
+      miniBtn.addEventListener('keydown', function (e) {
+        if (e.repeat) return;
+        if (e.key === ' ' || e.key === 'Enter' || e.key === 'Spacebar') {
+          e.preventDefault();
+          tap(miniBtn);
+          loadIntoFrame(nextUrl());
+        }
+      });
+      miniBtn.addEventListener('click', function (e) { e.preventDefault(); });
+
+      homeBtn.addEventListener('click', function () {
+        var hadState = history.state && history.state.view === 'frame';
+        goHome();                       // instant visual return
+        if (hadState) history.back();   // consume the pushed entry (popstate -> goHome, idempotent)
+      });
+      function openCurrent() { if (current) window.open(current, '_blank', 'noopener,noreferrer'); }
+      openBtn.addEventListener('click', openCurrent);
+      fbOpen.addEventListener('click', openCurrent);
+
+      window.addEventListener('popstate', function () {
+        if (!history.state || history.state.view !== 'frame') goHome();
+      });
+
+      function activate(list) {
+        pool = list.length ? list : FALLBACK.slice();
+        refill();
+        bigBtn.disabled = false;
+      }
+      fetch('links.json', { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (d) { activate(normalise(d)); })
+        .catch(function (err) {
+          console.warn('Press the Button: could not load links.json — using fallback list.', err);
+          activate(FALLBACK.slice());
+        });
+    })();
+  </script>
+</body>
+</html>
