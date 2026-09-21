@@ -249,14 +249,14 @@
         <span class="post-index-tag" style="background:rgba(162,155,254,0.18)">🎮</span>
         <div>
           <div class="post-index-title">A Field Guide to the Mood Chips</div>
-          <div class="post-index-meta">4 min read</div>
+          <div class="post-index-meta">6 min read</div>
         </div>
       </a>
       <a href="#behind-the-scenes">
         <span class="post-index-tag" style="background:rgba(255,107,107,0.18)">🔴</span>
         <div>
           <div class="post-index-title">151 Sites, Zero Accounts</div>
-          <div class="post-index-meta">5 min read</div>
+          <div class="post-index-meta">6 min read</div>
         </div>
       </a>
     </nav>
@@ -292,14 +292,15 @@
         <span class="post-date">September 2026</span>
       </div>
       <h2>A Field Guide to the Mood Chips</h2>
-      <p>Fully random is fun, but sometimes you know roughly what kind of bored you are. That's what the six mood chips above the button are for — tap one to narrow the pool instead of pulling from all 151 sites.</p>
-      <p><strong>🎮 Arcade</strong> — quick browser games you can pick up in seconds, no download required.<br>
-      <strong>🧠 Quiz</strong> — trivia, knowledge tests, and "how much do you actually know" pages.<br>
-      <strong>⚖️ Dilemma</strong> — would-you-rather style questions and moral hot takes with no clean answer.<br>
-      <strong>🎨 Art</strong> — cursor-based drawing tools and generative visual toys.<br>
-      <strong>⚡ Reflex</strong> — reaction-time tests and speed challenges that take ten seconds to try and are strangely hard to walk away from.<br>
-      <strong>👻 Weird</strong> — the catch-all: eerie photo archives, abandoned-places tours, map-based oddities, and things that don't fit anywhere else.</p>
-      <p>Tap a chip to activate it, tap it again to go back to the full 151-site pool. See the <a href="faq.html">FAQ</a> for how the shuffle logic itself works.</p>
+      <p>Fully random is fun, but sometimes you know roughly what kind of bored you are. That's what the six mood chips above the button are for — tap one to narrow the pool instead of pulling from all 151 sites. Every one of the 151 sites carries exactly one mood tag, so the chips add up to the whole rotation with nothing left over and nothing double-counted. Here's what's actually behind each one.</p>
+      <p><strong>🎮 Arcade (21 sites)</strong> — quick browser games you can pick up in seconds, no download required. This is the classic "bored at a desk" category: think CoolMathGames, CrazyGames, and Y8 — the kind of site that's been around since browser Flash games were the whole internet, minus the Flash.</p>
+      <p><strong>🧠 Quiz (21 sites)</strong> — trivia, knowledge tests, and "how much do you actually know" pages. Sporcle and FunTrivia anchor this one; expect geography sporcles, logic categories, and the occasional "name every country" rabbit hole that eats twenty minutes.</p>
+      <p><strong>⚖️ Dilemma (29 sites, the biggest category)</strong> — would-you-rather style questions and moral hot takes with no clean answer. MIT's actual Moral Machine research project lives in here alongside neal.fun's Absurd Trolley Problems and a handful of trolley-problem variants — genuinely the deepest pool of the six, which is why it's the largest.</p>
+      <p><strong>🎨 Art (14 sites)</strong> — cursor-based drawing tools and generative visual toys. Patatap, thisissand, and AutoDraw are the tone-setters: no login, no save button, just move your cursor and see what happens. Smallest category on purpose — there just aren't that many good ones.</p>
+      <p><strong>⚡ Reflex (13 sites)</strong> — reaction-time tests and speed challenges that take ten seconds to try and are strangely hard to walk away from. Purely score-chasing: how fast can you click after the screen changes color, over and over.</p>
+      <p><strong>👻 Weird (53 sites, more than a third of the whole rotation)</strong> — the catch-all, and by far the biggest bucket: eerie photo archives of dead malls and abandoned places, liminal-space galleries, old-web time capsules, map-based oddities, things that genuinely don't fit anywhere else. DeadMalls and Library of Babel both live here, alongside a handful of oldweb.today-style time-capsule sites. If you only ever press one chip, this is the one most people land on — it's the reason "Weird" ended up nearly four times the size of Art or Reflex, the two smallest categories, instead of being trimmed to match.</p>
+      <p>Tap a chip to activate it, tap it again to go back to the full 151-site pool — you can only have one active at a time, so picking Weird means you're only drawing from those 53 until you turn it off again. There's no "mix two moods" option by design; the whole point is narrowing a big pool down to something small enough to feel curated, and two chips at once starts to defeat that.</p>
+      <p>If you're not sure which one to pick, that's the actual argument for leaving all six off. The categories exist for when you already know roughly what you're in the mood for — a quick game, a moral rabbit hole, ten seconds of reaction testing. When you genuinely don't know, the plain button pulling from all 151 is still the default experience, and arguably the more honest one. See the <a href="faq.html">FAQ</a> for how the shuffle logic itself works.</p>
     </article>
 
     <!-- Post 4 -->
@@ -310,8 +311,12 @@
       </div>
       <h2>151 Sites, Zero Accounts</h2>
       <p>Most "random site button" projects online are years-old link dumps — half the URLs are dead, and nobody's gone back to check. We didn't want to build another one of those, so every one of the 151 sites currently in the rotation was tested individually before it went live: does it load, is the certificate valid, is it actually still the thing it claims to be.</p>
-      <p>About a quarter of them block being loaded inside another page — a security header most sites set called X-Frame-Options. Rather than let those sites silently fail behind a blank iframe, we checked every single one ahead of time and built a fallback: those specific sites open in a new tab instead, with a clear "won't open inside the button" message rather than a dead screen.</p>
-      <p>The other design decision was to skip the usual stuff — no accounts, no cookies, no analytics. The button picks from a local list in your browser and nothing about your presses is logged anywhere. Full details are on the <a href="privacy.html">Privacy Policy</a>, and the numbers behind the vetting process are on the <a href="about.html">About page</a>.</p>
+      <p>151 made it in. 9 candidates didn't survive testing — a couple of dead domains that had simply expired, one site whose security certificate had been revoked since whatever list we first pulled it from, and one that, when we actually opened it, just wasn't there anymore. No error page, no redirect, nothing. It happens more than you'd think with sites that haven't been updated since the mid-2010s.</p>
+      <p>About a quarter of the 151 block being loaded inside another page — a security header most sites set called X-Frame-Options. CrazyGames, Newgrounds, ArmorGames, AddictingGames, neal.fun, and JetPunk are all in that group, among others. Rather than let those sites silently fail behind a blank iframe, we checked every single one ahead of time with a small script that reads the actual response headers — not guesswork, not a reused list from somewhere else — and built a fallback: those specific sites open in a new tab instead, with a clear "won't open inside the button" message rather than a dead screen.</p>
+      <p>That check only runs once, when a site is added or re-verified, not on every press — which means the list can drift out of date if a site changes its embedding policy later. It's re-run periodically rather than continuously, which is a deliberate tradeoff: a real-time header check on every single press would slow the button down for no real benefit. The blocklist itself matches on hostname suffix rather than exact URL, so a blocked domain's subdomains get caught automatically without needing a separate entry for each one.</p>
+      <p>Making the embedding actually work at all took a specific security setting most sites don't need: the page's Content-Security-Policy allows <code style="font-family:'Courier New',monospace;font-size:0.88em;background:var(--border);color:var(--ink);padding:0.15em 0.45em;border-radius:5px;font-weight:700;">frame-src *</code>, meaning it can embed literally any third-party origin. That's a wide-open rule, and we don't take it lightly — everything else in the policy stays locked down as tight as a normal site (no inline scripts from elsewhere, no arbitrary fonts, no unexpected connections), and the iframe itself runs sandboxed so an embedded page can't reach outside its own frame.</p>
+      <p>The other design decision was to skip the usual stuff — no accounts, no cookies, no analytics. The button picks from a local list in your browser and nothing about your presses is logged anywhere. There's no database behind this site tracking which sites you've seen or how often you press — the entire "state" of the app is a shuffled array sitting in your own browser tab, gone the moment you close it.</p>
+      <p>Full details are on the <a href="privacy.html">Privacy Policy</a>, and the numbers behind the vetting process are on the <a href="about.html">About page</a>.</p>
     </article>
 
     <!-- Sitemap -->
