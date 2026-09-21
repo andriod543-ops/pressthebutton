@@ -3,10 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Press the button." />
+  <meta name="description" content="Press a button, land on one of 151 hand-checked sites — games, quizzes, dilemmas, art tools, and weird corners of the internet. No accounts, no algorithm." />
   <title>Press the Button</title>
+  <link rel="canonical" href="https://www.pressboredbutton.com/" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔴</text></svg>" />
   <meta name="theme-color" content="#FF6B6B" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Press the Button" />
+  <meta property="og:title" content="Press the Button" />
+  <meta property="og:description" content="Press a button, land on one of 151 hand-checked sites — games, quizzes, dilemmas, art tools, and weird corners of the internet. No accounts, no algorithm." />
+  <meta property="og:url" content="https://www.pressboredbutton.com/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Press the Button" />
+  <meta name="twitter:description" content="Press a button, land on one of 151 hand-checked sites — no accounts, no algorithm." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.pressboredbutton.com/#website",
+    "url": "https://www.pressboredbutton.com/",
+    "name": "Press the Button",
+    "description": "A free, one-click random site picker that opens one of 151 hand-checked sites.",
+    "publisher": { "@id": "https://www.pressboredbutton.com/#organization" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.pressboredbutton.com/#organization",
+    "name": "Press the Button",
+    "url": "https://www.pressboredbutton.com/",
+    "email": "contact@pressboredbutton.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "contact@pressboredbutton.com",
+      "contactType": "customer support"
+    }
+  }
+  </script>
 
   <link rel="preload" as="font" type="font/woff2" href="fonts/fredoka-var-latin.woff2" crossorigin />
 
@@ -20,6 +57,16 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
 
     :root {
       --coral:  #FF6B6B;
@@ -316,6 +363,7 @@
   <!-- ══ HOME ══ -->
   <div class="home-view">
     <div class="stage">
+      <h1 class="visually-hidden">Press the Button — a free random site picker</h1>
       <div class="mood-row" role="group" aria-label="Filter by mood">
         <button class="mood-chip" type="button" data-mood="arcade" aria-pressed="false">🎮 Arcade</button>
         <button class="mood-chip" type="button" data-mood="quiz" aria-pressed="false">🧠 Quiz</button>
