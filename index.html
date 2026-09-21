@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Press a button, land on one of 151 hand-checked sites — games, quizzes, dilemmas, art tools, and weird corners of the internet. No accounts, no algorithm." />
+  <meta name="description" content="Press a button, land on one of 217 hand-checked sites — games, quizzes, dilemmas, art tools, and weird corners of the internet. No accounts, no algorithm." />
   <title>Press the Button</title>
   <link rel="canonical" href="https://www.pressboredbutton.com/" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔴</text></svg>" />
@@ -11,7 +11,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Press the Button" />
   <meta property="og:title" content="Press the Button" />
-  <meta property="og:description" content="Press a button, land on one of 151 hand-checked sites — games, quizzes, dilemmas, art tools, and weird corners of the internet. No accounts, no algorithm." />
+  <meta property="og:description" content="Press a button, land on one of 217 hand-checked sites — games, quizzes, dilemmas, art tools, and weird corners of the internet. No accounts, no algorithm." />
   <meta property="og:url" content="https://www.pressboredbutton.com/" />
   <meta property="og:image" content="https://www.pressboredbutton.com/images/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -19,7 +19,7 @@
   <meta property="og:image:alt" content="Press the Button — a red PRESS button on a dark gradient background" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Press the Button" />
-  <meta name="twitter:description" content="Press a button, land on one of 151 hand-checked sites — no accounts, no algorithm." />
+  <meta name="twitter:description" content="Press a button, land on one of 217 hand-checked sites — no accounts, no algorithm." />
   <meta name="twitter:image" content="https://www.pressboredbutton.com/images/og-image.png" />
 
   <script type="application/ld+json">
@@ -29,7 +29,7 @@
     "@id": "https://www.pressboredbutton.com/#website",
     "url": "https://www.pressboredbutton.com/",
     "name": "Press the Button",
-    "description": "A free, one-click random site picker that opens one of 151 hand-checked sites.",
+    "description": "A free, one-click random site picker that opens one of 217 hand-checked sites.",
     "publisher": { "@id": "https://www.pressboredbutton.com/#organization" }
   }
   </script>
@@ -396,7 +396,7 @@
       <div class="button-wrap">
         <button class="press-btn press-btn--big" id="press-btn" type="button" aria-label="Press the button" disabled>PRESS</button>
       </div>
-      <p class="trust-line">151 hand-checked sites &middot; no accounts &middot; no tracking</p>
+      <p class="trust-line">217 hand-checked sites &middot; no accounts &middot; no tracking</p>
     </div>
 
     <footer class="site-footer">
@@ -474,19 +474,23 @@
 
       // Hosts that send X-Frame-Options / frame-ancestors and cannot be embedded.
       // Matched by hostname suffix (so a bare entry also covers its www. form).
-      // Derived by checking response headers for all 151 links.json entries —
+      // Derived by checking response headers for all links.json entries —
       // re-run that check if links.json changes, rather than guessing new ones.
       var BLOCKED_HOSTS = [
         '123test.com', '16personalities.com', 'abandonedphotos.com', 'addictinggames.com',
-        'agame.com', 'armorgames.com', 'atlasobscura.com', 'buildtounderstand.itch.io',
-        'clickspeedtest.io', 'crazygames.com', 'dailygriddle.com', 'drawastickman.com',
-        'gameflare.com', 'improvapp.com', 'instantverdict.com', 'iobit.com', 'jetpunk.com',
-        'justsettleit.app', 'kongregate.com', 'neal.fun', 'newgrounds.com', 'openguessr.com',
-        'orteil.dashnet.org', 'pacman-games.com', 'personality-quizzes.com',
-        'philosophyexperiments.com', 'play2048.co', 'plays.org', 'procatinator.com',
+        'agame.com', 'arcade.pirillo.com', 'armorgames.com', 'atlasobscura.com',
+        'bloob.io', 'buildtounderstand.itch.io', 'catfishing.net', 'clickspeedtest.io',
+        'crazygames.com', 'dailygriddle.com', 'drawastickman.com', 'either.io',
+        'gameflare.com', 'graebor.itch.io', 'higherlowergame.com', 'idrlabs.com',
+        'improvapp.com', 'instantverdict.com', 'iobit.com', 'jetpunk.com',
+        'justsettleit.app', 'kongregate.com', 'neal.fun', 'neave.com',
+        'newgrounds.com', 'openguessr.com', 'orteil.dashnet.org', 'ottoojala.itch.io',
+        'pacman-games.com', 'personality-quizzes.com', 'philosophyexperiments.com', 'play2048.co',
+        'plays.org', 'poki.com', 'politicalcompass.org', 'procatinator.com',
         'purposegames.com', 'puzzleship.com', 'quickdraw.withgoogle.com', 'rapidtables.com',
-        'reaction-time-test.io', 'reflexlab.co', 'silvergames.com', 'trylovely.app',
-        'trywyr.com', 'wouldurather.io', 'y8.com', 'zoom.earth'
+        'reaction-time-test.io', 'reflexlab.co', 'sciencealert.com', 'silvergames.com',
+        'ted.com', 'trylovely.app', 'trywyr.com', 'webcamtoy.com',
+        'wikihow.com', 'wouldurather.io', 'y8.com', 'zoom.earth'
       ];
 
       var FALLBACK = [
