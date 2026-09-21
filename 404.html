@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="This page doesn't exist. Head back to Press the Button." />
+  <title>Page Not Found — Press the Button</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔴</text></svg>" />
+  <meta name="theme-color" content="#1C1518" />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="preload" as="font" type="font/woff2" href="fonts/fredoka-var-latin.woff2" crossorigin />
+
+  <style>
+    @font-face {
+      font-family: 'Fredoka';
+      font-style: normal;
+      font-weight: 300 700;
+      font-display: swap;
+      src: url('fonts/fredoka-var-latin.woff2') format('woff2');
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --coral:  #FF6B6B;
+      --bg:     #1C1518;
+      --ink:    #F8F1EC;
+      --muted:  #9C8B90;
+      --card:   #271F22;
+      --border: #3B2E33;
+    }
+
+    html { height: 100%; }
+
+    body {
+      min-height: 100%;
+      font-family: 'Fredoka', Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 8% 15%,  rgba(255,107,107,0.22) 0%, transparent 50%),
+        radial-gradient(ellipse at 92% 85%, rgba(78,205,196,0.16)  0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(255,217,61,0.10)  0%, transparent 65%),
+        var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+      padding: 6vmin 1.5rem;
+    }
+
+    .wrap {
+      max-width: 460px;
+      text-align: center;
+    }
+
+    .code {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--coral);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+
+    p {
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-family: 'Fredoka', Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+      background: radial-gradient(circle at 34% 28%, #FF9A7B 0%, var(--coral) 42%, #E8574E 100%);
+      box-shadow: 0 5px 0 #c0392b, 0 10px 22px rgba(255,107,107,0.34);
+      transition: transform 0.12s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.12s ease;
+    }
+    .home-link:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #c0392b, 0 14px 28px rgba(255,107,107,0.42); }
+    .home-link:active { transform: translateY(3px); box-shadow: 0 1px 0 #c0392b; }
+    .home-link:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="code">404</p>
+    <h1>This page doesn't exist.</h1>
+    <p>Whatever you were looking for isn't here — but there's still a button to press.</p>
+    <a href="/" class="home-link">← Back to the Button</a>
+  </div>
+</body>
+</html>
