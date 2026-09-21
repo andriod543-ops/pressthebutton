@@ -370,6 +370,12 @@
 </head>
 <body>
 
+  <noscript>
+    <div style="max-width: 480px; margin: 4rem auto; padding: 1.5rem; text-align: center; font-family: Arial, sans-serif; color: #F8F1EC; background: #271F22; border: 2px solid #3B2E33; border-radius: 16px;">
+      Press the Button needs JavaScript to pick a random site. Please enable it in your browser to use the button.
+    </div>
+  </noscript>
+
   <!-- ══ HOME ══ -->
   <div class="home-view">
     <div class="stage">
@@ -635,10 +641,15 @@
         rebuildPool();
         bigBtn.disabled = false;
       }
+      var linksTimeout = setTimeout(function () {
+        console.warn('Press the Button: links.json is taking too long — using fallback list.');
+        activate([]);
+      }, 5000);
       fetch('links.json')
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(function (d) { activate(normalise(d)); })
+        .then(function (d) { clearTimeout(linksTimeout); activate(normalise(d)); })
         .catch(function (err) {
+          clearTimeout(linksTimeout);
           console.warn('Press the Button: could not load links.json — using fallback list.', err);
           activate([]);
         });
