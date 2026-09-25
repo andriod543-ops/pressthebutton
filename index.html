@@ -151,6 +151,57 @@
       text-align: center;
       letter-spacing: 0.01em;
     }
+
+    /* ══ What People Found ══════════════════════════ */
+    .found-section {
+      padding: 3rem 1.5rem 2.5rem;
+      border-top: 2px dashed var(--border);
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .found-heading {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-align: center;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+    .found-disclosure {
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+    .found-disclosure a { color: var(--coral); font-weight: 700; text-decoration: none; }
+    .found-disclosure a:hover { text-decoration: underline; }
+    .found-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .found-card {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 1.1rem 1.3rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .found-card-icon { font-size: 1.3rem; flex-shrink: 0; line-height: 1.4; }
+    .found-card-text {
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.6;
+      color: var(--ink);
+    }
     .button-wrap {
       position: relative;
       width: clamp(240px, 60vmin, 420px);
@@ -398,6 +449,37 @@
       </div>
       <p class="trust-line">217 hand-checked sites &middot; no accounts &middot; no tracking</p>
     </div>
+
+    <section class="found-section" aria-labelledby="found-heading">
+      <h2 class="found-heading" id="found-heading">What People Found</h2>
+      <p class="found-disclosure">We don't track visits — see our <a href="privacy.html">Privacy Policy</a> — so these are illustrative examples of what the button can turn up, not real quotes from real visitors.</p>
+      <div class="found-grid">
+        <div class="found-card">
+          <span class="found-card-icon">🎨</span>
+          <span class="found-card-text">Got sent to a tool that redraws the Mona Lisa out of random shapes — meant to glance for five seconds, stayed for five minutes.</span>
+        </div>
+        <div class="found-card">
+          <span class="found-card-icon">⚖️</span>
+          <span class="found-card-text">Landed on a trolley-problem simulator and ended up arguing with myself about it for way too long.</span>
+        </div>
+        <div class="found-card">
+          <span class="found-card-icon">⚡</span>
+          <span class="found-card-text">One press, one reaction-time test, and immediately wanted a rematch to beat the score.</span>
+        </div>
+        <div class="found-card">
+          <span class="found-card-icon">👻</span>
+          <span class="found-card-text">Pressed it on a break and ended up reading about abandoned shopping malls instead of going back to work.</span>
+        </div>
+        <div class="found-card">
+          <span class="found-card-icon">🎮</span>
+          <span class="found-card-text">Somehow ended up stacking cartoon pigs into a tower for ten minutes straight.</span>
+        </div>
+        <div class="found-card">
+          <span class="found-card-icon">🧠</span>
+          <span class="found-card-text">Hit a hangman game mid-scroll and completely lost track of time.</span>
+        </div>
+      </div>
+    </section>
 
     <footer class="site-footer">
       <nav class="footer-nav" aria-label="Footer navigation">
