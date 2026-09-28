@@ -278,8 +278,13 @@
       padding: 1.5rem 1.25rem 1.75rem;
       border-top: 2px dashed var(--border);
       display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
+      gap: 1rem;
     }
+    .footer-badge { opacity: 0.9; transition: opacity 0.15s ease; }
+    .footer-badge:hover { opacity: 1; }
     .footer-nav {
       display: flex; align-items: center; justify-content: center;
       flex-wrap: wrap; gap: 0.5rem; max-width: 720px;
@@ -520,6 +525,11 @@
           Instagram
         </a>
       </nav>
+      <div class="footer-badge">
+        <a href="https://turbo0.com/item/press-the-button" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" style="height: 54px; width: auto;" />
+        </a>
+      </div>
     </footer>
   </div>
 
