@@ -1,0 +1,21 @@
+# Press the Button
+
+> A free, one-click random site picker. Press the button and it opens one of 217 hand-checked sites — a quiz, an arcade game, a weird photo archive, whatever's next in the mix. No feed, no algorithm, no accounts, no tracking.
+
+Press the Button lets visitors narrow the random pool with six mood chips (Arcade, Quiz, Dilemma, Art, Reflex, Weird), each site tagged with exactly one mood so the chips partition the full rotation with nothing left out. Picks are drawn from a shuffle-bag queue running entirely in the visitor's browser, so a site can't repeat until every other site in the active pool has been shown. There is no sign-up, no login, no cookies, and no analytics tracking — nothing about a visit is stored or sent anywhere.
+
+Every linked site is individually tested before being added (does it load, is its certificate valid, is it still the thing it claims to be) and re-checked periodically afterward. Sites that block being embedded in an iframe (roughly 1 in 3 of the rotation) are detected ahead of time by reading their response headers, and open in a new tab instead of showing a blank frame.
+
+## Pages
+
+- [Home](https://www.pressboredbutton.com/): The button itself, mood chips, and the full random picker.
+- [About](https://www.pressboredbutton.com/about.html): How the site works, the vetting process, and the numbers behind it.
+- [FAQ](https://www.pressboredbutton.com/faq.html): Answers on how the picker works, the mood chips, site vetting, privacy, and cookies.
+- [Blog](https://www.pressboredbutton.com/blog.html): Short posts on boredom, random discovery, the mood-chip breakdown, and the vetting process behind the 217-site rotation.
+- [Contact](https://www.pressboredbutton.com/contact.html): Suggest a site, report a broken link, or get in touch.
+- [Privacy Policy](https://www.pressboredbutton.com/privacy.html): What data is and isn't collected (nothing is).
+- [Terms](https://www.pressboredbutton.com/terms.html): Terms of use and the disclaimer on third-party linked sites.
+
+## Optional
+
+- [links.json](https://www.pressboredbutton.com/links.json): The current list of 217 sites in the rotation with their mood tags.
